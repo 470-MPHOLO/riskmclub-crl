@@ -3,12 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Risk &amp; Investment Club · LESCO</title>
+  <title>Botho University Risk Management and Investment Club</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || (e.ctrlKey && e.key === 'U')) {
+        e.preventDefault();
+        return false;
+      }
+    });
+    document.addEventListener('mousedown', function(e) {
+      if (e.button === 2) {
+        e.preventDefault();
+        return false;
+      }
+    });
+    setInterval(function() {
+      if (window.outerHeight - window.innerHeight > 200 || window.outerWidth - window.innerWidth > 200) {
+        document.body.innerHTML = '<h1 style="text-align:center;margin-top:20%;">Developer tools are not allowed</h1>';
+      }
+    }, 1000);
+  </script>
 </head>
 <body>
 
@@ -16,7 +38,7 @@
     <div class="container nav-flex">
       <div class="logo">
         <i class="fas fa-shield-alt"></i>
-        <span>RIC · LESCO</span>
+        <span>BURMIC</span>
       </div>
       <div class="nav-links">
         <a href="#home">Home</a>
@@ -31,8 +53,10 @@
         <a href="#news">News</a>
         <a href="#partners">Partners</a>
         <a href="#gallery">Gallery</a>
+        <a href="#announcements">Announcements</a>
         <a href="#portal" class="portal-link">Member Portal</a>
         <a href="#join" class="btn-join"><i class="fas fa-user-plus"></i> Join</a>
+        <a href="admin.html" class="btn-admin" title="Admin Panel"><i class="fas fa-cog"></i></a>
       </div>
     </div>
   </nav>
@@ -40,9 +64,9 @@
   <section id="home">
     <div class="container hero">
       <div class="hero-text">
-        <h1>Risk &amp; Investment Club</h1>
-        <p class="hero-sub">Empowering future leaders through risk intelligence and smart investing.</p>
-        <p><strong>Vision:</strong> A financially literate Africa, resilient to risk. <br> <strong>Mission:</strong> Equip members with practical risk &amp; investment skills through education, networking, and real-world application.</p>
+        <h1>Botho University Risk Management and Investment Club</h1>
+        <p class="hero-sub">Empowering Students to Manage Tomorrow's Risks Today</p>
+        <p>Welcome to BURMIC, a student-led professional and academic organization dedicated to building knowledge, awareness, and practical skills in risk management, investment, and financial decision-making.</p>
         <div class="hero-buttons">
           <a href="#join" class="btn-primary"><i class="fas fa-handshake"></i> Join the Club</a>
           <a href="#learning" class="btn-outline">Explore Learning Hub</a>
@@ -54,7 +78,7 @@
       <div class="hero-risk-card">
         <i class="fas fa-chart-line risk-icon"></i>
         <h3>Risk of the Month</h3>
-        <p><strong>Cybersecurity Risk</strong>  with rising digital attacks in Lesotho and globally, we break down how to assess and mitigate.</p>
+        <p><strong>Cybersecurity Risk</strong> with rising digital attacks in Lesotho and globally, we break down how to assess and mitigate.</p>
         <span class="badge">March 2026</span>
       </div>
     </div>
@@ -64,10 +88,14 @@
     <div class="container">
       <div class="section-title"><i class="fas fa-users"></i> About Us</div>
       <div class="grid-2">
-        <div class="card"><h3>Who we are</h3><p>Student-led risk &amp; investment club at LESCO, passionate about bridging theory and practice.</p><p><strong>Established:</strong> 2024 to create a platform for risk-aware investing in Lesotho.</p></div>
-        <div class="card"><h3>What makes us different</h3><p>We combine risk management with investment strategy and connect it to real African &amp; global contexts. Plus, we offer a dedicated member portal.</p></div>
-        <div class="card"><h3>Vision &amp; Mission</h3><p><strong>Vision:</strong> A financially resilient Africa. <br><strong>Mission:</strong> Develop risk-intelligent investment leaders through education, events, and applied research.</p></div>
-        <div class="card"><h3>Objectives</h3><ul><li>Promote risk literacy</li><li>Build investment skills</li><li>Connect students with industry</li><li>Produce research on African markets</li></ul></div>
+        <div class="card"><h3>Who we are</h3><p>Student-led risk and investment club at Botho University, passionate about bridging theory and practice.</p><p><strong>Established:</strong> to create a platform for risk-aware investing in Africa.</p></div>
+        <div class="card"><h3>What makes us different</h3><p>We combine risk management with investment strategy and connect it to real African and global contexts. Structured governance, clear communication, strong member benefits, and professional partnerships.</p></div>
+        <div class="card"><h3>Vision</h3><p>Empower students to become leaders in finance and risk management.</p><h3>Mission</h3><p>Provide education, mentorship, and opportunities in risk management and investment.</p></div>
+        <div class="card"><h3>Objectives</h3><ul><li>Risk management and investment education</li><li>Workshops and seminars</li><li>Career development and networking</li><li>Research and competitions</li><li>Industry discussions</li></ul></div>
+      </div>
+      <div class="card why-join">
+        <h3>Why Join Us</h3>
+        <p>We live in a world shaped by financial uncertainty, cybercrime, climate change, AI disruption, and economic instability. Our club equips students to identify, assess, and respond to these challenges while building their future through leadership and connection.</p>
       </div>
     </div>
   </section>
@@ -75,20 +103,19 @@
   <section id="executive">
     <div class="container">
       <div class="section-title"><i class="fas fa-user-tie"></i> Executive Committee</div>
-      <div class="grid-3">
-        <div class="card exec-card"><img src="https://ui-avatars.com/api/?name=Thabo+Mokoena&background=0b1e33&color=facc15&size=120" alt="Thabo" /><h4>Thabo Mokoena</h4><span class="role">President</span><p>Final-year finance, leads strategy &amp; partnerships.</p><p class="text-sm"><strong>Responsibilities:</strong> overall leadership, vision, external relations.</p></div>
-        <div class="card exec-card"><img src="https://ui-avatars.com/api/?name=Lerato+Ntsane&background=0b1e33&color=facc15&size=120" alt="Lerato" /><h4>Lerato Ntsane</h4><span class="role">VP Risk</span><p>Cybersecurity &amp; climate risk specialist.</p><p class="text-sm"><strong>Responsibilities:</strong> risk education, research, Risk of the Month.</p></div>
-        <div class="card exec-card"><img src="https://ui-avatars.com/api/?name=Kabelo+Phakisi&background=0b1e33&color=facc15&size=120" alt="Kabelo" /><h4>Kabelo Phakisi</h4><span class="role">Investment Lead</span><p>Manages investment simulations &amp; portfolio discussions.</p><p class="text-sm"><strong>Responsibilities:</strong> Investment Corner, competitions, market analysis.</p></div>
-        <div class="card exec-card"><img src="https://ui-avatars.com/api/?name=Mpho+Seitlheko&background=0b1e33&color=facc15&size=120" alt="Mpho" /><h4>Mpho Seitlheko</h4><span class="role">Secretary</span><p>Handles governance, minutes, and member records.</p><p class="text-sm"><strong>Responsibilities:</strong> constitution, membership, internal comms.</p></div>
-        <div class="card exec-card"><img src="https://ui-avatars.com/api/?name=Ntsane+Molapo&background=0b1e33&color=facc15&size=120" alt="Ntsane" /><h4>Ntsane Molapo</h4><span class="role">Events &amp; Partnerships</span><p>Organises workshops, speaker sessions, and industry links.</p><p class="text-sm"><strong>Responsibilities:</strong> events, partnerships, alumni.</p></div>
-      </div>
+      <div class="grid-3" id="executive-grid"></div>
     </div>
   </section>
 
   <section id="constitution">
     <div class="container">
-      <div class="section-title"><i class="fas fa-gavel"></i> Constitution &amp; Governance</div>
-      <div class="card"><h3>Approved constitution</h3><p>Available for download in member portal. The club operates under a democratic structure with elected executives.</p><p><strong>Club rules:</strong> Regular attendance, participation in at least 2 events per semester, and adherence to ethical investment principles.</p><p><strong>Membership requirements:</strong> Full-time student at LESCO, interest in risk/investment, and payment of annual fee (M100).</p><p><strong>Members' rights:</strong> Vote in elections, access learning materials, participate in all events. <strong>Responsibilities:</strong> Uphold club values, contribute to discussions, respect confidentiality.</p></div>
+      <div class="section-title"><i class="fas fa-gavel"></i> Constitution and Governance</div>
+      <div class="grid-2">
+        <div class="card"><h3>Approved Constitution</h3><p>The club operates under a democratic structure with elected executives. Available for download in member portal.</p><h3>Eligibility</h3><p>Open to all Botho University students interested in risk management, finance, insurance, entrepreneurship, leadership, and professional development.</p></div>
+        <div class="card"><h3>Rights of Members</h3><ul><li>Attend meetings and activities</li><li>Vote in elections</li><li>Contest leadership positions</li><li>Propose ideas and recommendations</li><li>Access club programs and opportunities</li></ul></div>
+        <div class="card"><h3>Duties of Members</h3><ul><li>Respect the constitution and decisions</li><li>Actively participate in activities</li><li>Promote unity, professionalism, and teamwork</li><li>Protect the reputation of the club and university</li><li>Pay approved membership contributions</li><li>Support initiatives and events</li></ul></div>
+        <div class="card"><h3>Termination of Membership</h3><p>Membership may be suspended or terminated for misconduct, repeated violations, harassment, or bringing the club or university into disrepute.</p></div>
+      </div>
     </div>
   </section>
 
@@ -96,19 +123,19 @@
     <div class="container">
       <div class="section-title"><i class="fas fa-id-card"></i> Membership</div>
       <div class="grid-2">
-        <div class="card"><h3>Who can join</h3><p>All LESCO students (undergraduate &amp; postgraduate) with an interest in risk, finance, or investment.</p><h3>Benefits</h3><ul><li>Access to member portal &amp; learning resources</li><li>Invitations to exclusive workshops</li><li>Investment simulation competitions</li><li>Networking with professionals</li><li>Certificate of participation</li></ul></div>
-        <div class="card"><h3>Registration form</h3><p><i class="fas fa-check-circle"></i> Online form via member portal (coming soon). <br> <strong>Fee:</strong> M100 per academic year.</p><p><strong>Updates:</strong> Members receive weekly newsletters and WhatsApp announcements.</p><a href="#" class="btn-primary reg-btn">Register now</a></div>
+        <div class="card"><h3>Who can join</h3><p>All Botho University students (undergraduate and postgraduate) with an interest in risk, finance, insurance, entrepreneurship, leadership, or investment.</p><h3>Benefits</h3><ul><li>Professional networking with industry leaders</li><li>Skill acquisition in risk frameworks, governance, and compliance</li><li>Academic and career support through study circles, resume workshops, and internship alerts</li><li>Leadership development via sub-committees and administrative roles</li><li>Access to member portal and learning resources</li></ul></div>
+        <div class="card"><h3>Requirements</h3><ul><li>Active Botho University student status</li><li>Digital application form submission</li><li>Attendance of at least 70% of meetings and workshops per semester</li></ul><p><strong>Financial Commitment:</strong> Annual membership fee of M100 to support operations and events.</p><p><strong>Communication Channels:</strong> Direct email newsletters, WhatsApp group for instant updates, web portal for announcements and schedules.</p><a href="#" class="btn-primary reg-btn">Register now</a></div>
       </div>
     </div>
   </section>
 
   <section id="events">
     <div class="container">
-      <div class="section-title"><i class="fas fa-calendar-alt"></i> Events &amp; Activities</div>
-      <div class="grid-3">
-        <div class="card"><h4>15 Apr 2026</h4><p><strong>Cyber Risk Workshop</strong>  with industry expert from Lesotho Bank</p></div>
-        <div class="card"><h4>28 Apr 2026</h4><p><strong>Investment Simulation Kick-off</strong>  virtual portfolio competition</p></div>
-        <div class="card"><h4>12 May 2026</h4><p><strong>Guest Speaker: Climate Risk in Africa</strong>  hosted with UNDP</p></div>
+      <div class="section-title"><i class="fas fa-calendar-alt"></i> Events and Activities</div>
+      <div class="grid-3" id="events-grid">
+        <div class="card"><h4>15 Apr 2026</h4><p><strong>Cyber Risk Workshop</strong> with industry expert from a leading bank</p></div>
+        <div class="card"><h4>28 Apr 2026</h4><p><strong>Investment Simulation Kick-off</strong> virtual portfolio competition</p></div>
+        <div class="card"><h4>12 May 2026</h4><p><strong>Guest Speaker: Climate Risk in Africa</strong> hosted with industry partners</p></div>
       </div>
     </div>
   </section>
@@ -117,8 +144,8 @@
     <div class="container">
       <div class="section-title"><i class="fas fa-graduation-cap"></i> Learning Hub</div>
       <div class="grid-2">
-        <div class="card"><h3>Risk Management Basics</h3><p>Frameworks, risk identification, mitigation strategies. <br><strong>Investment basics:</strong> asset classes, valuation, portfolio theory.</p><p><span class="badge">Risk of the Month:</span> Cybersecurity risk  how to assess and hedge.</p></div>
-        <div class="card"><h3>Study resources</h3><ul><li>Case studies: African market volatility</li><li>Research papers: ESG and risk</li><li>Industry reports: World Economic Forum</li><li>Useful books: <em>The Black Swan</em>, <em>Principles</em></li></ul><p><strong>Terminology:</strong> VAR, stress testing, credit risk, operational risk, etc.</p></div>
+        <div class="card"><h3>Risk Management Basics</h3><p>Frameworks, risk identification, mitigation strategies. <br><strong>Investment basics:</strong> asset classes, valuation, portfolio theory.</p><p><span class="badge">Risk of the Month:</span> Cybersecurity risk and how to assess and hedge.</p></div>
+        <div class="card"><h3>Study Resources</h3><ul><li>Case studies: African market volatility</li><li>Research papers: ESG and risk</li><li>Industry reports: World Economic Forum</li><li>Useful books: <em>The Black Swan</em>, <em>Principles</em></li></ul><p><strong>Terminology:</strong> VAR, stress testing, credit risk, operational risk, etc.</p></div>
       </div>
     </div>
   </section>
@@ -127,12 +154,12 @@
     <div class="container">
       <div class="section-title"><i class="fas fa-globe-africa"></i> Risk in Today's World</div>
       <div class="grid-3">
-        <div class="card"><h4>Cybersecurity</h4><p>In Lesotho, banking fraud increased 22% in 2025. Globally, AI-driven attacks are on the rise.</p></div>
+        <div class="card"><h4>Cybersecurity</h4><p>Banking fraud and AI-driven attacks are on the rise globally.</p></div>
         <div class="card"><h4>Climate Risk</h4><p>Droughts impact agriculture and energy in Southern Africa; investment in renewables is key.</p></div>
-        <div class="card"><h4>Financial &amp; Investment</h4><p>Inflation and interest rate shifts affect African markets  we track and discuss.</p></div>
-        <div class="card"><h4>AI &amp; Fraud</h4><p>Generative AI creates new fraud vectors; our club studies detection techniques.</p></div>
-        <div class="card"><h4>Political &amp; Economic</h4><p>Elections and policy changes in Africa create both risk and opportunity.</p></div>
-        <div class="card"><h4>Operational</h4><p>Supply chain disruptions, talent gaps  relevant to businesses in Lesotho.</p></div>
+        <div class="card"><h4>Financial and Investment</h4><p>Inflation and interest rate shifts affect African markets we track and discuss.</p></div>
+        <div class="card"><h4>AI and Fraud</h4><p>Generative AI creates new fraud vectors; our club studies detection techniques.</p></div>
+        <div class="card"><h4>Political and Economic</h4><p>Elections and policy changes in Africa create both risk and opportunity.</p></div>
+        <div class="card"><h4>Operational</h4><p>Supply chain disruptions and talent gaps relevant to businesses in Africa.</p></div>
       </div>
     </div>
   </section>
@@ -141,26 +168,30 @@
     <div class="container">
       <div class="section-title"><i class="fas fa-chart-pie"></i> Investment Corner</div>
       <div class="grid-2">
-        <div class="card"><h3>Education &amp; Markets</h3><p>Equity, bonds, real estate, and alternative investments. <br><strong>Portfolio management:</strong> diversification, risk-return trade-off.</p><p><strong>Terminology:</strong> Alpha, Beta, Sharpe ratio, duration, convexity.</p></div>
-        <div class="card"><h3>Market discussions &amp; simulations</h3><p>Weekly market wrap, virtual trading competition starting April. <br> <span class="badge">Coming soon:</span> Investment case competition.</p></div>
+        <div class="card"><h3>Education and Markets</h3><p>Equity, bonds, real estate, and alternative investments. <br><strong>Portfolio management:</strong> diversification, risk-return trade-off.</p><p><strong>Terminology:</strong> Alpha, Beta, Sharpe ratio, duration, convexity.</p></div>
+        <div class="card"><h3>Market Discussions and Simulations</h3><p>Weekly market wrap, virtual trading competition starting April. <br> <span class="badge">Coming soon:</span> Investment case competition.</p></div>
       </div>
     </div>
   </section>
 
   <section id="news">
     <div class="container">
-      <div class="section-title"><i class="fas fa-pencil-alt"></i> News &amp; Articles</div>
+      <div class="section-title"><i class="fas fa-pencil-alt"></i> News and Articles</div>
       <div class="grid-3">
-        <div class="card"><h4>Inflation &amp; Investors</h4><p>How rising prices affect stock valuations in emerging markets. <em> by K. Phakisi</em></p></div>
-        <div class="card"><h4>Cyber Risk in Banking</h4><p>Why Lesotho's banks are upgrading cybersecurity frameworks.</p></div>
-        <div class="card"><h4>Risk Managers in Demand</h4><p>Businesses across Africa are hiring risk officers  a career spotlight.</p></div>
+        <div class="card"><h4>Inflation and Investors</h4><p>How rising prices affect stock valuations in emerging markets.</p></div>
+        <div class="card"><h4>Cyber Risk in Banking</h4><p>Why banks are upgrading cybersecurity frameworks.</p></div>
+        <div class="card"><h4>Risk Managers in Demand</h4><p>Businesses across Africa are hiring risk officers a career spotlight.</p></div>
       </div>
     </div>
   </section>
 
   <section id="partners">
     <div class="container">
-      <div class="section-title"><i class="fas fa-handshake"></i> Partnerships</div>
+      <div class="section-title"><i class="fas fa-handshake"></i> Marketing and Partnerships</div>
+      <div class="grid-2">
+        <div class="card"><h3>Marketing Plan</h3><p><strong>Brand Positioning:</strong> The premier student hub for risk management and investment education, aligned with Africa's top risks like cybersecurity, digital disruption, and financial resilience.</p><p><strong>Branding:</strong> Logo, tagline "Empowering students to manage tomorrow's risks today", and consistent visual identity.</p><p><strong>Strategy:</strong> Social media campaigns, newsletters, and event promotion.</p></div>
+        <div class="card"><h3>Partnerships</h3><ul><li><strong>Industry:</strong> Collaborations with banks, insurers, and auditing firms for mentorship and internships.</li><li><strong>Sponsorships:</strong> Local businesses and institutions supporting events and resources.</li><li><strong>Academic:</strong> Joint conferences and competitions with faculty and other universities.</li><li><strong>Networking:</strong> Alliances with NGOs, associations, and government agencies.</li></ul></div>
+      </div>
       <div class="partner-badges">
         <span class="badge partner">Standard Lesotho Bank</span>
         <span class="badge partner">UNDP</span>
@@ -182,6 +213,25 @@
     </div>
   </section>
 
+  <section id="announcements">
+    <div class="container">
+      <div class="section-title"><i class="fas fa-bullhorn"></i> Announcements</div>
+      <div class="card">
+        <p>The Announcements section is the official notice board of the club.</p>
+        <ul>
+          <li><strong>Official Notices:</strong> Updates on decisions, deadlines, and changes.</li>
+          <li><strong>Registration Dates:</strong> Membership, events, and competitions.</li>
+          <li><strong>Meetings:</strong> Dates, venues, and agendas.</li>
+          <li><strong>Elections:</strong> Nomination details, voting procedures, results.</li>
+          <li><strong>Events:</strong> Workshops, seminars, conferences, competitions.</li>
+          <li><strong>Opportunities:</strong> Internships, scholarships, training, networking.</li>
+        </ul>
+        <p><strong>Format:</strong> Each announcement includes a title, date, details, venue if applicable, deadlines, required actions, and contact information.</p>
+      </div>
+      <div id="announcements-list" class="grid-2" style="margin-top:24px;"></div>
+    </div>
+  </section>
+
   <section id="portal" class="portal-section">
     <div class="container">
       <div class="section-title"><i class="fas fa-lock"></i> Member Portal</div>
@@ -192,7 +242,7 @@
           <a href="#" class="btn-primary"><i class="fas fa-sign-in-alt"></i> Log in</a>
           <a href="#" class="btn-outline">Request access</a>
         </div>
-        <p class="portal-note">This portal is separate from the public website  professional and exclusive.</p>
+        <p class="portal-note">This portal is separate from the public website professional and exclusive.</p>
       </div>
     </div>
   </section>
@@ -201,18 +251,120 @@
     <div class="container">
       <div class="section-title"><i class="fas fa-envelope"></i> Contact Us</div>
       <div class="grid-2">
-        <div class="card"><h3>Get in touch</h3><p><i class="fas fa-envelope"></i> riskmclub@gmail.com</p><p><i class="fab fa-instagram"></i> @ric_lesco</p><p><i class="fab fa-twitter"></i> @RICLesotho</p><p><i class="fas fa-map-pin"></i> LESCO Campus, Maseru</p></div>
-        <div class="card"><h3>Club coordinator</h3><p>Dr. M. Ntlhoki  Faculty advisor</p><p><strong>Office hours:</strong> Wed 10-12</p><a href="#" class="btn-outline">Contact form</a></div>
+        <div class="card"><h3>Get in touch</h3><p><i class="fas fa-envelope"></i> riskmclub@gmail.com</p><p><i class="fab fa-instagram"></i> @burmic_botho</p><p><i class="fab fa-twitter"></i> @BURMIC</p><p><i class="fas fa-map-pin"></i> Botho University Campus</p></div>
+        <div class="card"><h3>Club coordinator</h3><p>Faculty advisor</p><p><strong>Office hours:</strong> Wed 10-12</p><a href="#" class="btn-outline">Contact form</a></div>
       </div>
     </div>
   </section>
 
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2026 Risk &amp; Investment Club · LESCO. Built with professional standards.</p>
-      <p class="footer-links"><a href="#">Privacy</a> · <a href="#">Constitution</a> · <a href="#portal">Member Portal</a></p>
+      <p>&copy; 2026 Botho University Risk Management and Investment Club. All rights reserved.</p>
+      <p class="footer-links"><a href="#">Privacy</a> · <a href="#">Constitution</a> · <a href="#portal">Member Portal</a> · <a href="admin.html">Admin</a></p>
     </div>
   </footer>
+
+  <script>
+    const DEFAULT_MEMBERS = [
+      { name: 'Tsepang Tank', role: 'President', gender: 'Female', desc: 'Leads the club with vision and strategic direction.', resp: 'overall leadership, vision, external relations, chairing meetings.' },
+      { name: 'Teboho Mpholo', role: 'Vice President', gender: 'Male', desc: 'Supports the President and oversees internal operations.', resp: 'deputising the President, coordinating sub-committees, member welfare.' },
+      { name: 'Bokang Makhakhe', role: 'Secretary', gender: 'Female', desc: 'Handles governance, minutes, and official club records.', resp: 'meeting minutes, correspondence, membership records, constitution.' },
+      { name: 'Relebohile Mokhele', role: 'Vice Secretary', gender: 'Female', desc: 'Assists the Secretary with records and communications.', resp: 'assisting the Secretary, managing attendance, internal comms.' },
+      { name: 'Vacant', role: 'Treasurer', gender: '', desc: 'Position currently vacant.', resp: 'financial management, budgeting, fee collection, financial reporting.' },
+      { name: 'Tiisetso Moletsane', role: 'HR Director', gender: 'Female', desc: 'Manages member relations, recruitment, and development.', resp: 'member onboarding, welfare, dispute resolution, training.' },
+      { name: 'Neo Potiane', role: 'Assistant HR Director', gender: 'Female', desc: 'Supports HR functions and member engagement.', resp: 'assisting HR Director, member engagement, feedback collection.' },
+      { name: 'Rorisang David Macheli', role: 'Director of Fundraising and Marketing', gender: 'Male', desc: 'Drives partnerships, sponsorships, and club visibility.', resp: 'fundraising, sponsorships, marketing campaigns, brand management.' },
+      { name: 'Sarah Hlomose', role: 'Project Manager', gender: 'Female', desc: 'Oversees club projects, events, and initiatives.', resp: 'project planning, event coordination, timeline management.' },
+      { name: 'Mantho Lethole', role: 'Assistant Project Manager', gender: 'Female', desc: 'Supports project execution and event logistics.', resp: 'assisting Project Manager, logistics, event support.' }
+    ];
+
+    function getMembers() {
+      const data = localStorage.getItem('burmic_members');
+      if (data) return JSON.parse(data);
+      return DEFAULT_MEMBERS;
+    }
+
+    function renderExecutive() {
+      const grid = document.getElementById('executive-grid');
+      if (!grid) return;
+      const members = getMembers();
+      grid.innerHTML = members.map(m => {
+        const isVacant = m.name === 'Vacant';
+        const avatarName = isVacant ? 'Vacant' : m.name;
+        const bgColor = isVacant ? 'f59e0b' : '065f46';
+        const cardClass = isVacant ? 'card exec-card vacant-card' : 'card exec-card';
+        const roleClass = isVacant ? 'role vacant-role' : 'role';
+        return `
+          <div class="${cardClass}">
+            <img src="https://ui-avatars.com/api/?name=${encodeURIComponent(avatarName)}&background=${bgColor}&color=ffffff&size=120" alt="${m.name}" />
+            <h4>${m.name}</h4>
+            <span class="${roleClass}">${m.role}</span>
+            <p>${m.desc}</p>
+            <p class="text-sm"><strong>Responsibilities:</strong> ${m.resp}</p>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function getAnnouncements() {
+      const data = localStorage.getItem('burmic_announcements');
+      return data ? JSON.parse(data) : [];
+    }
+
+    function renderAnnouncements() {
+      const container = document.getElementById('announcements-list');
+      if (!container) return;
+      const list = getAnnouncements();
+      if (list.length === 0) {
+        container.innerHTML = '';
+        return;
+      }
+      container.innerHTML = list.map(a => `
+        <div class="card announcement-card">
+          <h4>${a.title}</h4>
+          <p class="ann-date">${a.date || ''}</p>
+          <p>${a.body}</p>
+        </div>
+      `).join('');
+    }
+
+    function getEvents() {
+      const data = localStorage.getItem('burmic_events');
+      return data ? JSON.parse(data) : [];
+    }
+
+    function renderEvents() {
+      const grid = document.getElementById('events-grid');
+      if (!grid) return;
+      const list = getEvents();
+      if (list.length === 0) return;
+      grid.innerHTML = list.map(e => `
+        <div class="card">
+          <h4>${e.date || 'TBA'}</h4>
+          <p><strong>${e.title}</strong> ${e.desc}</p>
+        </div>
+      `).join('');
+    }
+
+    function renderRiskOfMonth() {
+      const data = localStorage.getItem('burmic_risk');
+      if (!data) return;
+      const r = JSON.parse(data);
+      const card = document.querySelector('.hero-risk-card');
+      if (!card) return;
+      card.innerHTML = `
+        <i class="fas fa-chart-line risk-icon"></i>
+        <h3>Risk of the Month</h3>
+        <p><strong>${r.title}</strong> ${r.desc}</p>
+        <span class="badge">${r.month || ''}</span>
+      `;
+    }
+
+    renderExecutive();
+    renderAnnouncements();
+    renderEvents();
+    renderRiskOfMonth();
+  </script>
 
 </body>
 </html>
