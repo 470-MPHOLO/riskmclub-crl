@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel · BURMIC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+  <div class="admin-header">
+    <div class="container">
+      <h1><i class="fas fa-cog"></i> BURMIC Admin Panel</h1>
+      <a href="index.html"><i class="fas fa-arrow-left"></i> Back to Website</a>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div id="login-view" class="login-box">
+      <i class="fas fa-lock"></i>
+      <h2>Admin Login</h2>
+      <div class="form-group">
+        <input type="password" id="admin-password" placeholder="Enter admin password" />
+      </div>
+      <button class="admin-btn" onclick="checkLogin()">Log In</button>
+      <div id="login-status" class="status-msg"></div>
+    </div>
+
+    <div id="admin-view" class="hidden">
+
+      <div class="admin-section">
+        <div class="admin-card">
+          <h2><i class="fas fa-users-cog"></i> Executive Committee</h2>
+          <p class="admin-hint">Update the executive team here. Positions marked as vacant are highlighted. Changes are saved locally and reflected on the homepage.</p>
+          <div id="members-container"></div>
+          <div class="btn-row">
+            <button class="admin-btn secondary" onclick="addMemberRow()"><i class="fas fa-plus"></i> Add Member</button>
+            <button class="admin-btn" onclick="saveMembers()"><i class="fas fa-save"></i> Save Members</button>
+          </div>
+          <div id="members-status" class="status-msg"></div>
+        </div>
+
+        <div class="admin-card">
+          <h2><i class="fas fa-bullhorn"></i> Announcements</h2>
+          <div class="form-group">
+            <label>Announcement Title</label>
+            <input type="text" id="ann-title" placeholder="e.g. Elections 2026" />
+          </div>
+          <div class="form-group">
+            <label>Announcement Body</label>
+            <textarea id="ann-body" placeholder="Enter the full announcement details..."></textarea>
+          </div>
+          <div class="form-group">
+            <label>Date</label>
+            <input type="date" id="ann-date" />
+          </div>
+          <div class="btn-row">
+            <button class="admin-btn" onclick="saveAnnouncement()"><i class="fas fa-save"></i> Save Announcement</button>
+          </div>
+          <div id="ann-status" class="status-msg"></div>
+          <h3>Current Announcements</h3>
+          <div id="ann-list"></div>
+        </div>
+
+        <div class="admin-card">
+          <h2><i class="fas fa-calendar-plus"></i> Events</h2>
+          <div class="form-group">
+            <label>Event Title</label>
+            <input type="text" id="event-title" placeholder="e.g. Cyber Risk Workshop" />
+          </div>
+          <div class="form-group">
+            <label>Event Description</label>
+            <textarea id="event-desc" placeholder="Describe the event..."></textarea>
+          </div>
+          <div class="form-group">
+            <label>Event Date</label>
+            <input type="date" id="event-date" />
+          </div>
+          <div class="btn-row">
+            <button class="admin-btn" onclick="saveEvent()"><i class="fas fa-save"></i> Save Event</button>
+          </div>
+          <div id="event-status" class="status-msg"></div>
+          <h3>Current Events</h3>
+          <div id="event-list"></div>
+        </div>
+
+        <div class="admin-card">
+          <h2><i class="fas fa-chart-line"></i> Risk of the Month</h2>
+          <div class="form-group">
+            <label>Risk Title</label>
+            <input type="text" id="risk-title" placeholder="e.g. Cybersecurity Risk" />
+          </div>
+          <div class="form-group">
+            <label>Risk Description</label>
+            <textarea id="risk-desc" placeholder="Explain the risk..."></textarea>
+          </div>
+          <div class="form-group">
+            <label>Month / Label</label>
+            <input type="text" id="risk-month" placeholder="e.g. March 2026" />
+          </div>
+          <div class="btn-row">
+            <button class="admin-btn" onclick="saveRisk()"><i class="fas fa-save"></i> Save Risk of the Month</button>
+          </div>
+          <div id="risk-status" class="status-msg"></div>
+        </div>
+
+        <div class="admin-card">
+          <h2><i class="fas fa-database"></i> Data Management</h2>
+          <p class="admin-hint">Export or reset all club data stored in this browser.</p>
+          <div class="btn-row">
+            <button class="admin-btn secondary" onclick="exportData()"><i class="fas fa-download"></i> Export Data</button>
+            <button class="admin-btn danger" onclick="resetData()"><i class="fas fa-trash"></i> Reset All Data</button>
+          </div>
+          <div id="data-status" class="status-msg"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+
+</body>
+</html>
